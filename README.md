@@ -7,3 +7,5 @@ Hello Devs ! As legacy code used to be. I Focused on algorithm/logic to make it 
 ⏳&nbsp;Apply some Object Orientation</br>
 
 A time travel between 90's way to code and common days
+
+![image](https://user-images.githubusercontent.com/48991604/151084222-2df55f1a-1129-4cc1-b27c-b9b083925c90.png)
