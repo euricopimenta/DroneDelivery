@@ -2,11 +2,17 @@ program droneDelivey;
 
 uses
   Vcl.Forms,
-  uMain in 'uMain.pas' {frm_Main},
+  DroneDelivery.View.MainForm in 'View\DroneDelivery.View.MainForm.pas' {frm_Main},
   Vcl.Themes,
   Vcl.Styles,
-  uDrone in 'Model\uDrone.pas',
-  uOrder in 'Model\uOrder.pas';
+  DroneDelivery.Model.Drone in 'Model\DroneDelivery.Model.Drone.pas',
+  DroneDelivery.Model.Order in 'Model\DroneDelivery.Model.Order.pas',
+  DroneDelivery.DAO.DBConnection in 'DAO\DroneDelivery.DAO.DBConnection.pas' {DBModule: TDataModule},
+  DroneDelivery.Controller.Drone in 'Controller\DroneDelivery.Controller.Drone.pas',
+  DroneDelivery.DAO.dmDrone in 'DAO\DroneDelivery.DAO.dmDrone.pas' {dmDrone: TDataModule},
+  DroneDelivery.DAO.dmOrder in 'DAO\DroneDelivery.DAO.dmOrder.pas' {DMOrder: TDataModule},
+  DroneDelivery.Controller.Order in 'Controller\DroneDelivery.Controller.Order.pas',
+  DroneDelivery.Controller.Trip in 'Controller\DroneDelivery.Controller.Trip.pas';
 
 {$R *.res}
 
@@ -14,5 +20,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(Tfrm_Main, frm_Main);
+  Application.CreateForm(TDBModule, DBModule);
   Application.Run;
 end.

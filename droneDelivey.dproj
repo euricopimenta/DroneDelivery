@@ -58,6 +58,7 @@
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
         <SanitizedProjectName>droneDelivey</SanitizedProjectName>
+        <Custom_Styles>Silver|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Silver.vsf</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <DCC_UsePackage>DBXSqliteDriver;dxFlowChartRS26;dxPSdxMapControlLnkRS26;DBXDb2Driver;StyleControls_dxe103Rio;FmxTeeUI926;comparer_103;vclactnband;dxBarRS26;vclFireDAC;MlSkinVCLRio;dxFireDACEMFRS26;tethering;dxSpreadSheetInplaceRichEditRS26;FireDACADSDriver;ACBr_BPeDabpeESCPOS;ACBr_BPe;dxRichEditCoreRS26;dxPSdxSpreadSheetLnkRS26;FireDACMSSQLDriver;vcltouch;ACBr_NFe;ACBr_NFeDanfeFR;vcldb;Intraweb;svn;dxPSTeeChartRS26;FPOPULAR;ACBr_NFeDanfeESCPOS;dxGDIPlusRS26;dxPSdxFCLnkRS26;ACBr_SATExtratoFR;dxPSLnksRS26;FireDACDBXDriver;cxGridRS26;dxPsPrVwAdvRS26;dxPDFViewerRS26;ACBr_NFSeDanfseFR;vclx;dxPScxTLLnkRS26;RESTBackendComponents;ACBr_Reinf;VCLRESTComponents;fsTee26;vclie;bindengine;CloudService;dxmdsRS26;SNGPC;FireDACMySQLDriver;ACBr_PAF;ACBr_SATECFVirtual;dxdborRS26;frx26;DataSnapClient;bindcompdbx;ACBr_TCP;IndyIPServer;DBXSybaseASEDriver;ACBr_CTe;cxPivotGridRS26;IndySystem;frxDBX26;fsADO26;cxTreeListdxBarPopupMenuRS26;FMXTee926;dsnapcon;cxTreeListRS26;dxPScxPivotGridLnkRS26;ACBr_PagFor;cxSchedulerRibbonStyleEventEditorRS26;dxPSCoreRS26;ACBre_Social;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxSpreadSheetRS26;dxBarExtItemsRS26;dxPSdxGaugeControlLnkRS26;ACBr_SPEDImportar;ACBr_SPED;ACBr_MDFe;emshosting;ACBr_LFD;comparerDBX_103;FireDACTDataDriver;DBXOdbcDriver;dxdbtrRS26;dxRichEditControlCoreRS26;soaprtl;DbxCommonDriver;dxFlowChartAdvancedCustomizeFormRS26;ACBr_CIOT;dxDockingRS26;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;cxLibraryRS26;rtl;emsserverresource;DbxClientDriver;DBXSybaseASADriver;dxPScxSchedulerLnkRS26;dxSpreadSheetConditionalFormattingDialogsRS26;ACBr_Convenio115;appanalytics;FMXTeePro926;dxRibbonCustomizationFormRS26;cxSchedulerGridRS26;IndyIPClient;bindcompvcl;dxADOEMFRS26;ACBr_NFSeXDANFSeFR;VclSmp;TMSFMXPackPkgDXE12;FireDACODBCDriver;RtmRxDB260;dxRibbonRS26;DataSnapIndy10ServerTransport;dxPScxCommonRS26;dxRichEditDocumentModelRS26;ACBr_Boleto;DataSnapProviderClient;ACBr_SEF2;FireDACMongoDBDriver;dxFlowChartDesignerRS26;dxPScxGridLnkRS26;FMXTree26;ACBr_NFSe;ACBr_MDFeDamdfeFR;dxSpreadSheetCoreRS26;DataSnapServerMidas;RESTComponents;ZComponent;DBXInterBaseDriver;dxPScxExtCommonRS26;ZCore;ACBr_NF3e;ACBr_TEFD;emsclientfiredac;ACBr_SATWS;DataSnapFireDAC;svnui;FMXTeeLanguage926;DBXMSSQLDriver;dxRichEditControlRS26;DatasnapConnectorsFreePascal;dxGaugeControlRS26;dxorgcRS26;dxPScxVGridLnkRS26;ACBr_EDI;ACBr_ONE;bindcompfmx;ColorButton;DBXOracleDriver;inetdb;ACBr_Diversos;dxBarDBNavRS26;ACBr_GNREGuiaFR;ACBr_LCDPR;emsedge;FireDACIBDriver;fmx;fmxdae;dxWizardControlRS26;QRWRunDXE10_3_w64;ACBr_CTeDacteFR;dxTabbedMDIRS26;ACBr_Ponto;fs26;dxEMFRS26;dbexpress;IndyCore;FMXTeeImport926;dxComnRS26;frxIntIO26;ZParseSql;dsnap;DataSnapCommon;emsclient;FireDACCommon;ACBr_NFSeX;DataSnapConnectors;cxSchedulerTreeBrowserRS26;ACBR_DeSTDA;soapserver;ACBr_SAT;PNGComponentsR;cxVerticalGridRS26;FMXTeeDB926;dxtrmdRS26;FireDACOracleDriver;DBXMySQLDriver;cxSchedulerRS26;dxPSdxLCLnkRS26;DBXFirebirdDriver;ACBr_Sintegra;FireDACCommonODBC;FireDACCommonDriver;dxMapControlRS26;ACBr_GNRE;ACBr_ADRCST;frxIntIOIndy26;inet;dxSpellCheckerRS26;IndyIPCommon;dxSpreadSheetCoreConditionalFormattingDialogsRS26;vcl;dxPSdxDBOCLnkRS26;ACBr_SATExtratoESCPOS;frxDB26;comparerFireDAC_103;FireDACDb2Driver;dxSpreadSheetReportDesignerRS26;ACBr_Integrador;dxPScxPCProdRS26;dxNavBarRS26;dxCoreRS26;fsDB26;cxExportRS26;TeeDB;FireDAC;dxHttpIndyRequestRS26;dxPSPrVwRibbonRS26;ZDbc;ACBr_Comum;frxe26;FireDACSqliteDriver;FireDACPgDriver;dxPSRichEditControlLnkRS26;FireDACASADriver;cxPivotGridChartRS26;Rave120VCL;dxPSDBTeeChartRS26;Tee;DataSnapServer;dxPSdxDBTVLnkRS26;vclwinx;FireDACDSDriver;ACBr_OpenSSL;frxADO26;dxTileControlRS26;dxSkinsCoreRS26;CustomIPTransport;vcldsnap;bindcomp;ZPlain;dxPSdxOCLnkRS26;DBXInformixDriver;ACBr_Serial;frce;acntDX10Rio_R;ACBr_BlocoX;RtmRxCtl260;dbxcds;ACBr_NFCeECFVirtual;adortl;ACBr_BoletoFR;dxSpreadSheetCoreDialogsRS26;ACBr_ANe;dxBarExtDBItemsRS26;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;dxPSdxPDFViewerLnkRS26;dxRichEditInplaceRS26;ACBr_NF3eDANF3eESCPOS;ACBr_MTER;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
@@ -100,12 +101,30 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="uMain.pas">
+        <DCCReference Include="View\DroneDelivery.View.MainForm.pas">
             <Form>frm_Main</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="Model\uDrone.pas"/>
-        <DCCReference Include="Model\uOrder.pas"/>
+        <DCCReference Include="Model\DroneDelivery.Model.Drone.pas"/>
+        <DCCReference Include="Model\DroneDelivery.Model.Order.pas"/>
+        <DCCReference Include="DAO\DroneDelivery.DAO.DBConnection.pas">
+            <Form>DBModule</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Controller\DroneDelivery.Controller.Drone.pas"/>
+        <DCCReference Include="DAO\DroneDelivery.DAO.dmDrone.pas">
+            <Form>dmDrone</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DAO\DroneDelivery.DAO.dmOrder.pas">
+            <Form>DMOrder</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Controller\DroneDelivery.Controller.Order.pas"/>
+        <DCCReference Include="Controller\DroneDelivery.Controller.Trip.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -615,6 +634,7 @@
                 <Platform value="Win32">True</Platform>
                 <Platform value="Win64">False</Platform>
             </Platforms>
+            <ModelSupport>False</ModelSupport>
         </BorlandProject>
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
