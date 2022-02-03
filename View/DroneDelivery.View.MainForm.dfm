@@ -16,6 +16,7 @@ object frm_Main: Tfrm_Main
   Padding.Right = 15
   Padding.Bottom = 15
   OldCreateOrder = False
+  Position = poScreenCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 17
