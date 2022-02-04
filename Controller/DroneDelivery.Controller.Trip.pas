@@ -49,7 +49,7 @@ begin
 
         DMOrder.dataOrders.Edit;
         DMOrder.dataOrdersSent.AsBoolean := True;
-        TripList.Add(DMDrone.dataDronesName.Value+' Goes to '+ DMOrder.dataOrdersWeight.Value.ToString +
+        TripList.Add(DMDrone.dataDronesName.Value+' Goes to '+ DMOrder.OrderLocation.Value +
                         ' Carrying '+ CurrentWeight.ToString+'g in his Trip #'+Trip.ToString);
 
       End;
