@@ -125,6 +125,11 @@
         </DCCReference>
         <DCCReference Include="Controller\DroneDelivery.Controller.Order.pas"/>
         <DCCReference Include="Controller\DroneDelivery.Controller.Trip.pas"/>
+        <DCCReference Include="DAO\DroneDelivery.DAO.dmTrip.pas">
+            <Form>DMTrip</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -7,7 +7,7 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  DroneDelivery.Model.Order,DroneDelivery.DAO.DBConnection;
+  DroneDelivery.Model.Order;
 
 type
   TDMOrder = class(TDataModule)
@@ -23,13 +23,15 @@ type
     Function DBClearOrders : Boolean;
     Function DBAddOrder (AOrder : TOrder) : Boolean;
     Function PopulateOrders (AFilename : String) : Boolean;
+    Procedure ResetSentStatus;
   end;
 
 var
   DMOrder: TDMOrder;
 
 implementation
-
+Uses
+  DroneDelivery.DAO.DBConnection;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
@@ -62,6 +64,21 @@ end;
 function TDMOrder.PopulateOrders(AFilename: String): Boolean;
 begin
   DBModule.PopulateDB(AFilename);
+  dataOrders.IndexFieldNames := 'Weight';
+  dataOrders.First;
+
+end;
+
+procedure TDMOrder.ResetSentStatus;
+begin
+  With DBModule.Query do
+  Begin
+    SQL.Text := 'UPDATE ORDERS SET SENT = FALSE';
+    ExecSQL;
+    SQL.Clear;
+
+  End;
+  dataOrders.Refresh;
   dataOrders.IndexFieldNames := 'Weight';
   dataOrders.First;
 end;

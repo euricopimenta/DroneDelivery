@@ -17,6 +17,7 @@ Type
     Destructor Destroy ; Override;
     Procedure Populate;
     Procedure addOrder(Location : String; Weight : String);
+    Procedure RemoveOrder;
     Procedure clearOrders;
     Procedure ConnectDBGrid(Grid : TDBGrid);
 
@@ -68,6 +69,12 @@ end;
 procedure TOrderController.Populate;
 begin
   DMOrder.PopulateOrders('.\ORDERS.SQL');
+
+end;
+
+procedure TOrderController.RemoveOrder;
+begin
+  DMOrder.dataOrders.Delete;
 
 end;
 

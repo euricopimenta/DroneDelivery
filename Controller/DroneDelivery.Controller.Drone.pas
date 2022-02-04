@@ -17,6 +17,7 @@ Type
     Destructor Destroy ; Override;
     Procedure Populate;
     Procedure addDrone(Name : String; MaxWeight : String);
+    Procedure RemoveDrone ;
     Procedure clearDrones;
     Procedure ConnectDBGrid(Grid : TDBGrid);
 
@@ -49,7 +50,8 @@ end;
 
 constructor TDroneController.Create;
 begin
-  DMDrone := TdmDrone.Create(nil);
+  if not Assigned(DMDrone) then
+    DMDrone := TdmDrone.Create(nil);
 
 end;
 
@@ -71,5 +73,11 @@ begin
 
 end;
 
+
+procedure TDroneController.RemoveDrone;
+begin
+  dmDrone.dataDrones.Delete;
+
+end;
 
 end.

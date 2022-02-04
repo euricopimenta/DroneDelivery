@@ -50,6 +50,8 @@ type
     edtDroneName: TEdit;
     edtDroneMaxWeight: TEdit;
     btnAddDrone: TButton;
+    btnRemoveDrone: TSpeedButton;
+    btnRemoveOrder: TSpeedButton;
 
     procedure FormCreate(Sender: TObject);
     procedure btnAddDroneClick(Sender: TObject);
@@ -59,6 +61,7 @@ type
     procedure btnClearOrdersClick(Sender: TObject);
     procedure btnGenerateTripsClick(Sender: TObject);
     procedure btnAddOrderClick(Sender: TObject);
+    procedure btnRemoveDroneClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -80,11 +83,13 @@ uses
 
 procedure Tfrm_Main.FormCreate(Sender: TObject);
 begin
-  DroneController := TDroneController.Create;
-  DroneController.ConnectDBGrid(dbgDrones);
+
 
   OrderController := TOrderController.Create;
-  OrderController.ConnectDBGrid(dbgOrders);
+  //OrderController.ConnectDBGrid(dbgOrders);
+
+  DroneController := TDroneController.Create;
+  //DroneController.ConnectDBGrid(dbgDrones);
 
 end;
 
@@ -106,6 +111,12 @@ end;
   begin
     DroneController.clearDrones;
     btnPopulateDrones.Enabled := True;
+
+  end;
+
+  procedure Tfrm_Main.btnRemoveDroneClick(Sender: TObject);
+  begin
+    DroneController.RemoveDrone;
 
   end;
 
@@ -142,6 +153,7 @@ begin
     raise Exception.Create('At least one drone and one Order must be registered');
    Try
      Trips := TTripController.Create;
+     Memo1.Lines.Clear;
      Memo1.Lines := Trips.getTripResults;
    Finally
      Trips.Free;

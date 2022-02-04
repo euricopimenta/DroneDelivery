@@ -3,13 +3,18 @@ object dmDrone: TdmDrone
   Height = 131
   Width = 198
   object dataDrones: TFDMemTable
-    FieldDefs = <>
-    IndexDefs = <
+    Active = True
+    FieldDefs = <
       item
-        Name = 'mtbDronesIndex1'
-        Fields = 'MaxWeight'
-        Options = [ixDescending]
+        Name = 'Name'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'MaxWeight'
+        DataType = ftInteger
       end>
+    IndexDefs = <>
     DetailFields = 'MaxWeight;Name'
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
@@ -18,7 +23,6 @@ object dmDrone: TdmDrone
     UpdateOptions.AssignedValues = [uvCheckRequired, uvCheckReadOnly, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    LocalSQL = DBModule.LocalSQL
     StoreDefs = True
     Left = 40
     Top = 32

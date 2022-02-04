@@ -7,30 +7,47 @@ uses
   DroneDelivery.Model.Order,
   DroneDelivery.DAO.DMDrone,
   DroneDelivery.DAO.DMOrder,
+  DroneDelivery.DAO.DMTrip,
   SysUtils;
 
  Type
   TTripController = Class
+    FTripList : TStringList;
+    Function Validate : Boolean;
 
   Public
+    Constructor Create;
+    Destructor Destroy ; Override;
     Function getTripResults : TStrings;
+
   End;
 
 implementation
 
 { TTripController }
 
+constructor TTripController.Create;
+begin
+  FTripList := TStringList.Create;
+  DMTrip := TDMTrip.Create(nil);
+  DMTrip.ValidateWeight;
+end;
+
+destructor TTripController.Destroy;
+begin
+  FTripList.Free;
+  DMOrder.ResetSentStatus;
+  DMDrone.dataDrones.First;
+  DMTrip.Free;
+  inherited;
+end;
+
 Function TTripController.getTripResults : TStrings;
 Var
  I , CurrentWeight, MaxWeight, Trip :Integer;
- TripList : TStringList;
+
 begin
  Trip := 1;
- TripList := TStringList.Create;
- DMDrone.dataDrones.First;
- DMDrone.dataDrones.IndexFieldNames := 'MaxWeight';
- DMOrder.dataOrders.First;
- DMOrder.dataOrders.IndexFieldNames := 'Weight';
 
  while not DMOrder.dataOrdersSent.Value do
  Begin
@@ -49,7 +66,7 @@ begin
 
         DMOrder.dataOrders.Edit;
         DMOrder.dataOrdersSent.AsBoolean := True;
-        TripList.Add(DMDrone.dataDronesName.Value+' Goes to '+ DMOrder.OrderLocation.Value +
+        FTripList.Add(DMDrone.dataDronesName.Value+' Goes to '+ DMOrder.OrderLocation.Value +
                         ' Carrying '+ CurrentWeight.ToString+'g in his Trip #'+Trip.ToString);
 
       End;
@@ -61,10 +78,15 @@ begin
    End;
    DMDrone.dataDrones.First;
    Inc(Trip,1);
+
  End;
- Result := TripList;
+ Result := FTripList;
 
 end;
 
+function TTripController.Validate: Boolean;
+begin
+
+end;
 
 end.
