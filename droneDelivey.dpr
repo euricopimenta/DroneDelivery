@@ -12,7 +12,8 @@ uses
   DroneDelivery.DAO.dmDrone in 'DAO\DroneDelivery.DAO.dmDrone.pas' {dmDrone: TDataModule},
   DroneDelivery.DAO.dmOrder in 'DAO\DroneDelivery.DAO.dmOrder.pas' {DMOrder: TDataModule},
   DroneDelivery.Controller.Order in 'Controller\DroneDelivery.Controller.Order.pas',
-  DroneDelivery.Controller.Trip in 'Controller\DroneDelivery.Controller.Trip.pas';
+  DroneDelivery.Controller.Trip in 'Controller\DroneDelivery.Controller.Trip.pas',
+  DroneDelivery.DAO.dmTrip in 'DAO\DroneDelivery.DAO.dmTrip.pas' {DMTrip: TDataModule};
 
 {$R *.res}
 

@@ -3,12 +3,26 @@ object dmDrone: TdmDrone
   Height = 131
   Width = 198
   object dataDrones: TFDMemTable
-    FieldDefs = <>
+    FieldDefs = <
+      item
+        Name = 'Name'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'MaxWeight'
+        DataType = ftInteger
+      end>
     IndexDefs = <
       item
-        Name = 'mtbDronesIndex1'
+        Name = 'DronesIndex'
         Fields = 'MaxWeight'
         Options = [ixDescending]
+      end>
+    Indexes = <
+      item
+        Active = True
+        Fields = 'MaxWeight;Name'
       end>
     DetailFields = 'MaxWeight;Name'
     FetchOptions.AssignedValues = [evMode]

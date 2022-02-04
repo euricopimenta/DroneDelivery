@@ -20,6 +20,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+    Procedure ResetSentStatus;
     Function DBClearOrders : Boolean;
     Function DBAddOrder (AOrder : TOrder) : Boolean;
     Function PopulateOrders (AFilename : String) : Boolean;
@@ -64,6 +65,21 @@ begin
   DBModule.PopulateDB(AFilename);
   dataOrders.IndexFieldNames := 'Weight';
   dataOrders.First;
+end;
+
+procedure TDMOrder.ResetSentStatus;
+begin
+  With DBModule.Query do
+  Begin
+    SQL.Text := 'UPDATE ORDERS SET SENT = FALSE';
+    ExecSQL;
+    SQL.Clear;
+
+  End;
+  dataOrders.Refresh;
+  dataOrders.IndexFieldNames := 'Weight';
+  dataOrders.First;
+
 end;
 
 end.

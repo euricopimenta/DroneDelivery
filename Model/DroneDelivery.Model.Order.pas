@@ -6,13 +6,13 @@ interface
     Private
       FLocation: String;
       FSent: Boolean;
-      FWeight: Double;
+      FWeight: Integer;
       procedure SetLocation(const Value: String);
       procedure SetSent(const Value: Boolean);
-      procedure SetWeight(const Value: Double);
+      procedure SetWeight(const Value: Integer);
     Public
       Property Location : String read FLocation write SetLocation;
-      Property Weight : Double read FWeight write SetWeight;
+      Property Weight : Integer read FWeight write SetWeight;
       Property Sent : Boolean read FSent write SetSent;
   End;
 
@@ -35,9 +35,9 @@ begin
   FSent := Value;
 end;
 
-procedure TOrder.SetWeight(const Value: Double);
+procedure TOrder.SetWeight(const Value: Integer);
 begin
-  if Value < 0.01 then
+  if Value < 0 then
     raise Exception.Create('The order must have a weight');
   FWeight := Value
 

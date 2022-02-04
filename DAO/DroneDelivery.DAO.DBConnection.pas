@@ -17,12 +17,6 @@ type
     Connection: TFDConnection;
     LocalSQL: TFDLocalSQL;
     Query: TFDQuery;
-    dataTrips: TFDMemTable;
-    dataTripsId: TSmallintField;
-    dataTripsCount: TSmallintField;
-    dataTripsDrone: TStringField;
-    dataTripsLocation: TStringField;
-    dtsTrips: TDataSource;
 
   private
     { Private declarations }

@@ -28,9 +28,6 @@ object frm_Main: Tfrm_Main
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 0
-    ExplicitTop = 41
-    ExplicitHeight = 631
     object pnlDrones: TPanel
       AlignWithMargins = True
       Left = 3
@@ -51,10 +48,6 @@ object frm_Main: Tfrm_Main
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitLeft = 0
-        ExplicitTop = 68
-        ExplicitWidth = 355
-        ExplicitHeight = 239
         object dbgDrones: TDBGrid
           AlignWithMargins = True
           Left = 3
@@ -83,30 +76,40 @@ object frm_Main: Tfrm_Main
           Color = 8273429
           ParentBackground = False
           TabOrder = 1
-          ExplicitTop = 207
-          ExplicitWidth = 355
           object btnPopulateDrones: TSpeedButton
+            Left = 90
+            Top = 0
+            Width = 90
+            Height = 32
+            Cursor = crHandPoint
+            Align = alLeft
+            Caption = 'Populate'
+            OnClick = btnPopulateDronesClick
+            ExplicitLeft = 75
+            ExplicitTop = 3
+          end
+          object btnClearDrones: TSpeedButton
+            Left = 0
+            Top = 0
+            Width = 90
+            Height = 32
+            Cursor = crHandPoint
+            Align = alLeft
+            Caption = 'Clear'
+            OnClick = btnClearDronesClick
+            ExplicitLeft = 93
+            ExplicitTop = 3
+          end
+          object btnRemoveDrone: TSpeedButton
             Left = 261
             Top = 0
             Width = 90
             Height = 32
             Cursor = crHandPoint
             Align = alRight
-            Caption = 'Populate'
-            OnClick = btnPopulateDronesClick
-            ExplicitLeft = 256
-            ExplicitTop = 3
-          end
-          object btnClearDrones: TSpeedButton
-            Left = 171
-            Top = 0
-            Width = 90
-            Height = 32
-            Cursor = crHandPoint
-            Align = alRight
-            Caption = 'Clear'
-            OnClick = btnClearDronesClick
-            ExplicitLeft = 125
+            Caption = 'Remove'
+            OnClick = btnRemoveDroneClick
+            ExplicitLeft = 263
             ExplicitTop = 3
           end
         end
@@ -122,9 +125,6 @@ object frm_Main: Tfrm_Main
         Color = 8273429
         ParentBackground = False
         TabOrder = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 355
         object Label4: TLabel
           Left = 0
           Top = 0
@@ -154,9 +154,6 @@ object frm_Main: Tfrm_Main
         Align = alTop
         Caption = 'Panel1'
         TabOrder = 2
-        ExplicitLeft = 0
-        ExplicitTop = 32
-        ExplicitWidth = 355
         object edtDroneName: TEdit
           AlignWithMargins = True
           Left = 4
@@ -214,9 +211,6 @@ object frm_Main: Tfrm_Main
       Color = 1556970
       ParentBackground = False
       TabOrder = 1
-      ExplicitLeft = 4
-      ExplicitTop = 351
-      ExplicitWidth = 353
       object Panel6: TPanel
         Left = 2
         Top = 34
@@ -225,9 +219,6 @@ object frm_Main: Tfrm_Main
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitTop = 32
-        ExplicitWidth = 337
-        ExplicitHeight = 243
         object dbgOrders: TDBGrid
           AlignWithMargins = True
           Left = 3
@@ -256,30 +247,40 @@ object frm_Main: Tfrm_Main
           Color = 1618683
           ParentBackground = False
           TabOrder = 1
-          ExplicitTop = 211
-          ExplicitWidth = 305
           object btnPopulateOrders: TSpeedButton
+            Left = 90
+            Top = 0
+            Width = 90
+            Height = 32
+            Cursor = crHandPoint
+            Align = alLeft
+            Caption = 'Populate'
+            OnClick = btnPopulateOrdersClick
+            ExplicitLeft = 165
+            ExplicitTop = 3
+          end
+          object btnClearOrders: TSpeedButton
+            Left = 0
+            Top = 0
+            Width = 90
+            Height = 32
+            Cursor = crHandPoint
+            Align = alLeft
+            Caption = 'Clear'
+            OnClick = btnClearOrdersClick
+            ExplicitLeft = -6
+            ExplicitTop = 3
+          end
+          object btnRemoveOrder: TSpeedButton
             Left = 261
             Top = 0
             Width = 90
             Height = 32
             Cursor = crHandPoint
             Align = alRight
-            Caption = 'Populate'
-            OnClick = btnPopulateOrdersClick
-            ExplicitLeft = 259
-            ExplicitTop = 3
-          end
-          object btnClearOrders: TSpeedButton
-            Left = 171
-            Top = 0
-            Width = 90
-            Height = 32
-            Cursor = crHandPoint
-            Align = alRight
-            Caption = 'Clear'
-            OnClick = btnClearOrdersClick
-            ExplicitLeft = 256
+            Caption = 'Remove'
+            OnClick = btnRemoveOrderClick
+            ExplicitLeft = 260
             ExplicitTop = 3
           end
         end
@@ -292,7 +293,6 @@ object frm_Main: Tfrm_Main
           BevelOuter = bvNone
           Caption = 'Panel1'
           TabOrder = 2
-          ExplicitWidth = 353
           object btnAddOrder: TButton
             Left = 309
             Top = 0
@@ -311,8 +311,6 @@ object frm_Main: Tfrm_Main
             TabOrder = 0
             WordWrap = True
             OnClick = btnAddOrderClick
-            ExplicitLeft = 263
-            ExplicitHeight = 33
           end
           object edtLocation: TEdit
             AlignWithMargins = True
@@ -328,8 +326,6 @@ object frm_Main: Tfrm_Main
             Color = clWhite
             TabOrder = 1
             TextHint = ' Location'
-            ExplicitLeft = 4
-            ExplicitHeight = 27
           end
           object edtWeight: TEdit
             AlignWithMargins = True
@@ -343,8 +339,6 @@ object frm_Main: Tfrm_Main
             NumbersOnly = True
             TabOrder = 2
             TextHint = ' Weight'
-            ExplicitLeft = 232
-            ExplicitHeight = 27
           end
         end
       end
@@ -359,9 +353,6 @@ object frm_Main: Tfrm_Main
         Color = 1549801
         ParentBackground = False
         TabOrder = 1
-        ExplicitLeft = 0
-        ExplicitTop = 0
-        ExplicitWidth = 305
         object Label3: TLabel
           Left = 0
           Top = 0
@@ -393,10 +384,6 @@ object frm_Main: Tfrm_Main
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitLeft = 313
-    ExplicitTop = 41
-    ExplicitWidth = 569
-    ExplicitHeight = 631
     object pnlTrips: TPanel
       AlignWithMargins = True
       Left = 3
@@ -408,10 +395,6 @@ object frm_Main: Tfrm_Main
       Color = 8273429
       ParentBackground = False
       TabOrder = 0
-      ExplicitLeft = 4
-      ExplicitTop = 4
-      ExplicitWidth = 561
-      ExplicitHeight = 623
       object Panel8: TPanel
         Left = 2
         Top = 2
@@ -423,9 +406,6 @@ object frm_Main: Tfrm_Main
         Color = 8339477
         ParentBackground = False
         TabOrder = 0
-        ExplicitLeft = 1
-        ExplicitTop = 1
-        ExplicitWidth = 559
         object Label1: TLabel
           Left = 0
           Top = 0
@@ -459,9 +439,6 @@ object frm_Main: Tfrm_Main
         Color = 8273429
         ParentBackground = False
         TabOrder = 1
-        ExplicitLeft = 1
-        ExplicitTop = 581
-        ExplicitWidth = 559
         object btnGenerateTrips: TButton
           Left = 433
           Top = 0
@@ -472,7 +449,6 @@ object frm_Main: Tfrm_Main
           Caption = 'Generate Trips'
           TabOrder = 0
           OnClick = btnGenerateTripsClick
-          ExplicitTop = 1
         end
       end
       object Memo1: TMemo
@@ -484,10 +460,6 @@ object frm_Main: Tfrm_Main
         Align = alClient
         BorderStyle = bsNone
         TabOrder = 2
-        ExplicitLeft = 4
-        ExplicitTop = 45
-        ExplicitWidth = 553
-        ExplicitHeight = 533
       end
     end
   end

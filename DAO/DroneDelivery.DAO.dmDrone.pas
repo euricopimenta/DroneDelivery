@@ -21,7 +21,10 @@ type
     { Public declarations }
     Function DBClearDrones : Boolean;
     Function DBAddDrone (ADrone : TDrone) : Boolean;
+    Procedure DBRemoveDrone;
     Function PopulateDrones (AFilename : String) : Boolean;
+    Procedure orderByMaxWeight;
+
   end;
 
 var
@@ -45,6 +48,20 @@ begin
 
 end;
 
+procedure TdmDrone.DBRemoveDrone;
+begin
+  dataDrones.Delete;
+  orderByMaxWeight;
+
+end;
+
+procedure TdmDrone.orderByMaxWeight;
+begin
+  dataDrones.IndexFieldNames := 'MaxWeight';
+  dataDrones.First;
+
+end;
+
 function TdmDrone.DBAddDrone(ADrone: TDrone): Boolean;
 begin
  With dataDrones do
@@ -54,7 +71,7 @@ begin
       Fields[0].AsString := ADrone.Name;
       Fields[1].AsFloat := ADrone.MaxWeight;
     Post;
-    IndexFieldNames := 'MaxWeight'; // sort by "smallest" drone
+    orderByMaxWeight;
 
   End;
 
@@ -63,8 +80,7 @@ end;
 function TdmDrone.PopulateDrones(AFilename: String): Boolean; begin
 
   DBModule.PopulateDB(AFilename);
-  dataDrones.IndexFieldNames := 'MaxWeight';
-  dataDrones.First;
+  orderByMaxWeight;
 
 end;
 
