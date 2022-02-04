@@ -43,8 +43,8 @@ begin
     SQL.Text := 'SELECT (SELECT MAX(WEIGHT)FROM ORDERS) AS HEAVIEST, '+
                 '       (SELECT MAX(MAXWEIGHT)FROM DRONES) AS STRONGEST';
     Open;
-    if FieldValues['HEAVIEST'] > FieldValues['STRONGEST'] then
-      raise Exception.Create('There is no Drone to carry '+FieldValues['HEAVIEST']+'g load');
+    if StrToInt(FieldValues['HEAVIEST']) > StrToInt(FieldValues['STRONGEST']) then
+      raise Exception.Create('There is no Drone to carry '+IntToStr(FieldValues['HEAVIEST'])+'g load');
     SQL.Clear;
 
   End;

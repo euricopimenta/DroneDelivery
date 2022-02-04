@@ -62,6 +62,7 @@ type
     procedure btnGenerateTripsClick(Sender: TObject);
     procedure btnAddOrderClick(Sender: TObject);
     procedure btnRemoveDroneClick(Sender: TObject);
+    procedure btnRemoveOrderClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -86,10 +87,10 @@ begin
 
 
   OrderController := TOrderController.Create;
-  //OrderController.ConnectDBGrid(dbgOrders);
+  OrderController.ConnectDBGrid(dbgOrders);
 
   DroneController := TDroneController.Create;
-  //DroneController.ConnectDBGrid(dbgDrones);
+  DroneController.ConnectDBGrid(dbgDrones);
 
 end;
 
@@ -139,6 +140,12 @@ end;
   begin
     OrderController.clearOrders;
     btnPopulateOrders.Enabled := True;
+
+  end;
+
+  procedure Tfrm_Main.btnRemoveOrderClick(Sender: TObject);
+  begin
+    OrderController.RemoveOrder;
 
   end;
 

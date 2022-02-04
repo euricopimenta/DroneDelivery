@@ -1,6 +1,6 @@
 object DBModule: TDBModule
-  OldCreateOrder = False
-  Height = 83
+  OldCreateOrder = True
+  Height = 92
   Width = 248
   object DriverLink: TFDPhysSQLiteDriverLink
     Left = 14
@@ -26,16 +26,13 @@ object DBModule: TDBModule
       item
         DataSet = DMOrder.dataOrders
         Name = 'Orders'
-      end
-      item
-        DataSet = Query
-        Name = 'Query'
       end>
     Left = 131
     Top = 14
   end
   object Query: TFDQuery
     Active = True
+    DetailFields = 'MaxWeight;Name'
     LocalSQL = LocalSQL
     Connection = Connection
     SQL.Strings = (

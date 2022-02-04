@@ -32,7 +32,7 @@ begin
   FOrder := TOrder.Create;
   Try
     FOrder.Location := Location;
-    FOrder.Weight := Weight.ToDouble;
+    FOrder.Weight := Weight.ToInteger;
     DMOrder.DBAddOrder(FOrder);
   Finally
     FOrder.Free;

@@ -9,7 +9,7 @@ uses
   FireDAC.UI.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
   FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.VCLUI.Wait, Data.DB, FireDAC.DApt,
   FireDAC.Comp.Client, FireDAC.Phys.SQLiteVDataSet, FireDAC.Comp.DataSet,
-  DroneDelivery.DAO.DMOrder,DroneDelivery.DAO.DMDrone,DroneDelivery.DAO.DMTrip;
+  DroneDelivery.DAO.DMDrone;
 
 type
   TDBModule = class(TDataModule)
@@ -28,6 +28,8 @@ var
   DBModule : TDBModule;
 
 implementation
+Uses
+  DroneDelivery.DAO.DMOrder;
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 

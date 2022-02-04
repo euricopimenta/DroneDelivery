@@ -13,7 +13,7 @@ uses
  Type
   TTripController = Class
     FTripList : TStringList;
-    Function Validate : Boolean;
+    Procedure ResetDataSets;
 
   Public
     Constructor Create;
@@ -30,14 +30,12 @@ constructor TTripController.Create;
 begin
   FTripList := TStringList.Create;
   DMTrip := TDMTrip.Create(nil);
-  DMTrip.ValidateWeight;
+
 end;
 
 destructor TTripController.Destroy;
 begin
   FTripList.Free;
-  DMOrder.ResetSentStatus;
-  DMDrone.dataDrones.First;
   DMTrip.Free;
   inherited;
 end;
@@ -47,11 +45,13 @@ Var
  I , CurrentWeight, MaxWeight, Trip :Integer;
 
 begin
- Trip := 1;
+  DMTrip.ValidateWeight;
+  ResetDataSets;
 
+ Trip := 1;
  while not DMOrder.dataOrdersSent.Value do
  Begin
-   for I := 0 to DMDrone.dataDrones.RecordCount do
+   for I := 0 to DMDrone.dataDrones.RecordCount-1 do
    Begin
      MaxWeight := DMDrone.dataDrones.FieldValues['MaxWeight'];
      CurrentWeight := 0;
@@ -69,7 +69,9 @@ begin
         FTripList.Add(DMDrone.dataDronesName.Value+' Goes to '+ DMOrder.OrderLocation.Value +
                         ' Carrying '+ CurrentWeight.ToString+'g in his Trip #'+Trip.ToString);
 
-      End;
+      End
+      Else
+        Break;
       DMOrder.dataOrders.Next;
 
      End;
@@ -77,15 +79,21 @@ begin
 
    End;
    DMDrone.dataDrones.First;
+   I := 0; //I put it manually because it's not reseting in the loop for. Bug ?
    Inc(Trip,1);
 
  End;
+
  Result := FTripList;
 
 end;
 
-function TTripController.Validate: Boolean;
+procedure TTripController.ResetDataSets;
 begin
+   DMDrone.orderByMaxWeight;
+   DMOrder.ResetSentStatus;
+   DMOrder.dataOrders.First;
+   DMOrder.dataOrders.IndexFieldNames := 'Weight';
 
 end;
 

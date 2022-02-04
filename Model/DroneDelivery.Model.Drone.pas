@@ -5,12 +5,12 @@ interface
     TDrone = Class
     private
       FName: String;
-      FMaxWeight: Double;
-      procedure SetMaxWeight(const Value: Double);
+      FMaxWeight: Integer;
+      procedure SetMaxWeight(const Value: Integer);
       procedure SetName(const Value: String);
     public
       property Name : String read FName write SetName;
-      property MaxWeight : Double read FMaxWeight write SetMaxWeight;
+      property MaxWeight : Integer read FMaxWeight write SetMaxWeight;
   End;
 
 implementation
@@ -19,9 +19,9 @@ Uses
 
 { TDrone }
 
-procedure TDrone.SetMaxWeight(const Value: Double);
+procedure TDrone.SetMaxWeight(const Value: Integer);
 begin
-  if Value < 0.01 then
+  if Value < 0 then
     raise Exception.Create('Drone needs a maxWeight');
   FMaxWeight := Value;
 

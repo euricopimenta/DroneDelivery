@@ -33,7 +33,7 @@ begin
   FDrone := TDrone.Create;
   Try
     FDrone.Name := Name;
-    FDrone.MaxWeight := MaxWeight.ToDouble;
+    FDrone.MaxWeight := MaxWeight.ToInteger;
     DMDrone.DBAddDrone(FDrone);
   Finally
     FDrone.Free
@@ -77,7 +77,7 @@ end;
 procedure TDroneController.RemoveDrone;
 begin
   dmDrone.dataDrones.Delete;
-
+  dmDrone.orderByMaxWeight;
 end;
 
 end.

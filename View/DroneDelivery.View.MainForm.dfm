@@ -279,6 +279,7 @@ object frm_Main: Tfrm_Main
             Cursor = crHandPoint
             Align = alRight
             Caption = 'Remove'
+            OnClick = btnRemoveOrderClick
             ExplicitLeft = 260
             ExplicitTop = 3
           end
